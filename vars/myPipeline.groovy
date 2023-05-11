@@ -3,9 +3,9 @@ def call(Map pipelineParams) {
     pipeline {
         agent any
         stages {
-            stage('checkout git') {
+            stage('clone git') {
                 steps {
-                    git clone: url: pipelineParams.scmUrl
+                    git: credentialsId: 'GitCredentials', url: pipelineParams.scmUrl
                 }
             }
 
