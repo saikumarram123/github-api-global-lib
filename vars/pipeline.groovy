@@ -23,24 +23,6 @@ def call(Map pipelineParams) {
                     )
                 }
             }
-
-            stage('deploy developmentServer'){
-                steps {
-                    deploy(pipelineParams.developmentServer, pipelineParams.serverPort)
-                }
-            }
-
-            stage('deploy staging'){
-                steps {
-                    deploy(pipelineParams.stagingServer, pipelineParams.serverPort)
-                }
-            }
-
-            stage('deploy production'){
-                steps {
-                    deploy(pipelineParams.productionServer, pipelineParams.serverPort)
-                }
-            }
         }
         post {
             failure {
