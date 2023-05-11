@@ -4,11 +4,9 @@ def call(Map pipelineParams) {
         agent any
         stages {
             stage('clone git') {
-                steps {
                     git: pipelineParams.scmUrl
                 }
-            }
-
+            
             stage('build') {
                 steps {
                     sh 'mvn clean package -DskipTests=true'
