@@ -5,7 +5,7 @@ def call(Map pipelineParams) {
         stages {
             stage('clone git') {
                 steps {
-                    git: credentialsId: 'GitCredentials', url: pipelineParams.scmUrl
+                    git: url: pipelineParams.scmUrl
                 }
             }
 
