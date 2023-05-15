@@ -14,13 +14,13 @@ def call(body) {
                 sh './gradlew clean'
 
                 echo 'Compile pipelineParams.app'
-                sh './gradlew :pipelineParams.app:build'
+                sh './gradlew :'pipelineParams.app':build'
                 
                 echo 'Compile pipelineParams.base'
-                sh './gradlew :pipelineParams.base:build'
+                sh './gradlew :'pipelineParams.base':build'
                 
                 echo 'Compile pipelineParams.common'
-                sh './gradlew :pipelineParams.common:build'
+                sh './gradlew :'pipelineParams.common':build'
                 
             }
         }
