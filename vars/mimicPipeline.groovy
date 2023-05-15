@@ -2,6 +2,10 @@ def call(Map pipelineParams) {
 
     pipeline {
         agent any
+         tools {
+        maven 'M3'
+        jdk 'Java 17'
+        }
         stages {
                stage('Compile') {
             steps {
