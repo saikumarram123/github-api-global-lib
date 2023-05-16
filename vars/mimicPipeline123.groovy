@@ -69,7 +69,7 @@ def call(Map pipelineParams) {
 
             }
 
-      stage('Package') {
+     /* stage('Package') {
 
         steps {
 
@@ -87,7 +87,7 @@ def call(Map pipelineParams) {
 
                 echo 'Building jars for pipelineParams.common'
 
-                sh './gradlew :pipelineParams.common:bootJar --stacktrace'
+                sh './gradlew :pipelineParams.common:bootJar --stacktrace' 
 
         post {
 
@@ -101,9 +101,9 @@ def call(Map pipelineParams) {
 
         }
 
-    }
-
-}
+    } 
+  */
+} 
 
 }
 
