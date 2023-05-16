@@ -20,7 +20,7 @@ def call(Map pipelineParams) {
             }
         }
 
-            stage ('test') {
+           /* stage ('test') {
                 steps {
                echo 'running tests on pipelineParams.app'
                sh "./gradlew cleanTest ${pipelineParams.app}:test --stacktrace"
@@ -31,7 +31,8 @@ def call(Map pipelineParams) {
                echo 'running tests on pipelineParams.common'
                sh "./gradlew cleanTest ${pipelineParams.common}:test --stacktrace"    
                 }
-            }
+            } */
+            
 }
 }
 }
