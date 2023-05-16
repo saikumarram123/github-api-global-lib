@@ -32,12 +32,6 @@ def call(Map pipelineParams) {
                sh "./gradlew cleanTest ${pipelineParams.common}:test --stacktrace"    
                 }
             }
-    
-        post {
-            failure {
-                mail to: pipelineParams.email, subject: 'Pipeline failed', body: "${env.BUILD_URL}"
-            }
-        }
 }
 }
 }
