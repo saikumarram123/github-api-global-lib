@@ -32,23 +32,12 @@ def call(Map pipelineParams) {
                sh "./gradlew cleanTest ${pipelineParams.common}:test --stacktrace"    
                 }
             }
-      stage('Package') {
-        steps {
-                echo 'Building jars for app'
-                sh "./gradlew :${pipelineParams.app}:bootJar --stacktrace"
-          
-                echo 'Building jars for pipelineParams.base'
-                sh "./gradlew :${pipelineParams.base}:bootJar --stacktrace"
-          
-                echo 'Building jars for pipelineParams.common'
-                sh "./gradlew :${pipelineParams.common}:bootJar --stacktrace"
+    
         post {
             failure {
                 mail to: pipelineParams.email, subject: 'Pipeline failed', body: "${env.BUILD_URL}"
             }
         }
-        }
-    }
 }
 }
 }
