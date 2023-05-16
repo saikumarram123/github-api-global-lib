@@ -32,6 +32,7 @@ def call(Map pipelineParams) {
                sh "./gradlew cleanTest ${pipelineParams.common}:test --stacktrace"    
                 }
             }
-      }
-   }
- }
+}
+}
+}
+
